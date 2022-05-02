@@ -42,7 +42,8 @@
 
 - Go into subscription and create a Cosmos DB Resource with a Core(SQL) API
 - create and name new resource group
-- select serverless, due to us working with something that doesn't need to be constantly "on"
+- select the serverless capacity mode due to us working with something that doesn't need to be constantly "on"
+- Select the region that works best for you based on your location
 ### Cosmos DB
 ### Azure Function
 

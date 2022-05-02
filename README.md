@@ -1,6 +1,21 @@
 # Cloud-Resume-Project
 ## *Azure-based full-stack serverless coding project using Blob Storage, Functions, CosmosDB, and GitHub Actions*<hr>
 
+## Table of Contents 
+- [Cloud-Resume-Project](#cloud-resume-project) 
+  - [Technologies Used:](#technologies-used)
+  - [Challenges](#challenges)
+  - [Diagram](#diagram)
+  - [Credits](#credits)
+    - [Project References](#project-references)
+    - [Frontend](#frontend)
+    - [Backend](#backend)
+    - [Cloud](#cloud)
+    - [Other](#other)
+  - [License](#license)
+
+<hr>
+
 ## Technologies Used:
 - Shell and scripting language: Powershell
 - IEM: VS Code
@@ -19,20 +34,11 @@
 ## Diagram 
 ![Project Diagram](diagrams/CRPDiagram.png)<hr>
 
-## Table of Contents 
-- [Cloud-Resume-Project](#cloud-resume-project)
-  - [*Azure-based full-stack serverless coding project using Blob Storage, Functions, CosmosDB, and GitHub Actions*<hr>](#azure-based-full-stack-serverless-coding-project-using-blob-storage-functions-cosmosdb-and-github-actionshr)
-  - [Technologies Used:](#technologies-used)
-  - [Challenges](#challenges)
-  - [Diagram](#diagram)
-  - [Table of Contents](#table-of-contents)
-  - [Credits](#credits)
-    - [Project References](#project-references)
-    - [Frontend](#frontend)
-    - [Backend](#backend)
-    - [Cloud](#cloud)
-    - [Other](#other)
-  - [License](#license)
+# Project Overview
+## *Scope of Project*
+### This project covers foundational frontend, backend, and cloud practices. A GitHub Repository will be created and the starter code will be cloned. The HTML file will be updated with resume info in addition to any other desired stylings. Following HTML updates a the JavaScript code for the visitor counter will be writtern. The website will be viewed locally, and all changes will be pushed to GitHub.
+
+<hr>
 
 ## Credits
 

@@ -1,90 +1,50 @@
-# Frontend readme
-## *Cloud Readme detailing steps taken in Azure*<hr>
-
-## Table of Contents 
-- [Cloud-Resume-Project](#cloud-resume-project) 
-  - [Technologies Used:](#technologies-used)
-  - [Challenges](#challenges)
-  - [Diagram](#diagram)
-  - [Credits](#credits)
-    - [Project References](#project-references)
-    - [Frontend](#frontend)
-    - [Backend](#backend)
-    - [Cloud](#cloud)
-    - [Other](#other)
-  - [License](#license)
+# Cloud readme
+## *Cloud Readme detailing Azure Processes*
 
 <hr>
 
+## Table of Contents 
+- [Cloud readme](#cloud-readme)
+  - [*Cloud Readme detailing Azure Processes*](#cloud-readme-detailing-azure-processes)
+  - [Table of Contents](#table-of-contents)
+  - [Technologies Used:](#technologies-used)
+  - [Challenges](#challenges)
+- [Cloud Overview](#cloud-overview)
+  - [*Scope of Cloud Services*](#scope-of-cloud-services)
+    - [HTML document will be updated with personal information. After updates are made, a javascript file will be created and the visitor counter function will be written.](#html-document-will-be-updated-with-personal-information-after-updates-are-made-a-javascript-file-will-be-created-and-the-visitor-counter-function-will-be-written)
+  - [Azure](#azure)
+    - [Subscription and Resource Group](#subscription-and-resource-group)
+    - [Cosmos DB](#cosmos-db)
+    - [Azure Function](#azure-function)
+  - [Credits](#credits)
+    - [Project References](#project-references)
+<hr>
+
 ## Technologies Used:
-- Languages: HTML, CSS, Markdown
+- Languages: C#, Markdown
+- Azure: Subscriptions, CosmosDB SQL, Resource Groups
 
 <hr>
 
 ## Challenges
-- Replacing Favicon link code with the code from Font Awesome
-- Adding horizontal rule to resume sections
-- Duplicating the education section
-- Creating Frontend Readme 
+- Writing azure function 
 <hr>
 
-## Diagram 
-![Project Diagram](images/sitemap.png)<hr>
-
-# Frontend Overview
-## *Scope of Frontend*
+# Cloud Overview
+## *Scope of Cloud Services*
 ### HTML document will be updated with personal information. After updates are made, a javascript file will be created and the visitor counter function will be written.  
 
 <hr>
 
-## Frontend
-### HTML
+## Azure
 
-modifications implemented were the inclusion of horizontal rules, adding validation links to certifications, and linking the design narrative to its corresponding Jira Page and GitHub Repo.
+### Subscription and Resource Group
 
-### JavaScript
-  **Purpose of the function**
-
-  *The purpose of the function is to grab the JSON that is provided by the API, grab the correct part of that JSON, and show it in our HTML document.* 
-
-- create file in frontend folder named 'main.js'.
-- To call the function add an event listener named 'DOMContentLoaded' and get visit count
-  ```js
-  Window.addEventListener('DOMContentLoaded', (event) =>{
-    getVisitCount();
-  ```
--  Declare a constant named 'functionApi;. The function will require a URL to place in the single quotes, but we will this leave blank until later.
-  ```js
-  const functionApi ='';
-  ```
-- create constant and name it "getVisitCount
-- declare variable, we used the number thirty
-  ```js
-  const getVisitCount = () => {
-    let count = 30;
-  ```
-- write fetch function that fetch's the API and grabs the response and returns it to JSON
-- Then grab the response and log a message to the console for debugging purposes
-  ```js
-  fetch(functionApi).then(response => {
-        return response.json()
-    }).then(response =>{
-        console.log("Website called function API.");
-  ```
-- Now set variable to the created variable to the actualy data that's in the JSON response
-- grab HTML document and get the element by the counter Id and then the inner text will be set to count data
-  ```js
-  count = response.count;
-        document.getElementById("counter").innerText = count;
-    }).catch(function(error){
-  ```
-- catch error, if present, and log the error message to the console
-- return count
-  ```js
-  count = response.count;
-        document.getElementById("counter").innerText = count;
-    }).catch(function(error){
-  ```
+- Go into subscription and create a Cosmos DB Resource with a Core(SQL) API
+- create and name new resource group
+- select serverless, due to us working with something that doesn't need to be constantly "on"
+### Cosmos DB
+### Azure Function
 
 <hr>
 
@@ -94,7 +54,5 @@ modifications implemented were the inclusion of horizontal rules, adding validat
 
 - <a href="https://github.com/madebygps/cgc-azure-resume">Cloud Guru Azure Resume Challenge.</a>
 - <a href="https://www.youtube.com/watch?v=ieYrBWmkfno&t=281s">Cloud Guru Azure Resume Challenge Video</a>
-  
-### Frontend
-- <a href="https://www.geeksforgeeks.org/html-hr-tag/">GeeksforGeeks.org article on adding a horizontal rule</a> 
+
 <hr>

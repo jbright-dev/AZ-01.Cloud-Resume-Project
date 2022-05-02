@@ -45,18 +45,46 @@ modifications implemented were the inclusion of horizontal rules, adding validat
 ### JavaScript
   **Purpose of the function**
 
-  The purpose of the function is to grab the JSON that is provided by the API, grab the correct part of that JSON and show it in our HTML document. 
+  *The purpose of the function is to grab the JSON that is provided by the API, grab the correct part of that JSON, and show it in our HTML document.* 
 
-- create file in frontend folder named 'main.js'. Declare a constant named 'functionApi;. The function will require a URL to place in the single quotes, but we will this leave blank until later.
+- create file in frontend folder named 'main.js'.
 - To call the function add an event listener named 'DOMContentLoaded' and get visit count
+  ```js
+  Window.addEventListener('DOMContentLoaded', (event) =>{
+    getVisitCount();
+  ```
+-  Declare a constant named 'functionApi;. The function will require a URL to place in the single quotes, but we will this leave blank until later.
+  ```js
+  const functionApi ='';
+  ```
 - create constant and name it "getVisitCount
 - declare variable, we used the number thirty
+  ```js
+  const getVisitCount = () => {
+    let count = 30;
+  ```
 - write fetch function that fetch's the API and grabs the response and returns it to JSON
 - Then grab the response and log a message to the console for debugging purposes
+  ```js
+  fetch(functionApi).then(response => {
+        return response.json()
+    }).then(response =>{
+        console.log("Website called function API.");
+  ```
 - Now set variable to the created variable to the actualy data that's in the JSON response
 - grab HTML document and get the element by the counter Id and then the inner text will be set to count data
-- catch error, if present, and log the error message to the consle
+  ```js
+  count = response.count;
+        document.getElementById("counter").innerText = count;
+    }).catch(function(error){
+  ```
+- catch error, if present, and log the error message to the console
 - return count
+  ```js
+  count = response.count;
+        document.getElementById("counter").innerText = count;
+    }).catch(function(error){
+  ```
 
 <hr>
 

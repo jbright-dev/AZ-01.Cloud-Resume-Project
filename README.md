@@ -36,7 +36,7 @@
 
 # Project Overview
 ## *Scope of Project*
-### This project covers foundational frontend, backend, and cloud practices. A GitHub Repository will be created and the starter code will be cloned. The HTML file will be updated with resume info in addition to any other desired stylings. Following HTML updates a the JavaScript code for the visitor counter will be writtern. The website will be viewed locally, and all changes will be pushed to GitHub.
+### This project covers foundational frontend, backend, and cloud practices. A GitHub Repository will be created and the starter code will be cloned. The HTML file will be updated with resume info in addition to any other desired stylings. Following HTML updates a the JavaScript code for the visitor counter will be written. The website will be viewed locally, and all changes will be pushed to GitHub. Once all frontend changes have been pushed to GitHub, Cosmos DB resources will be created, an Azure Function will be created, and the function will be tested locally.  
 
 <hr>
 

@@ -17,7 +17,8 @@
 <hr>
 
 ## Technologies Used:
-- Languages: HTML, CSS, Markdown
+- Languages: JavaScript
+- Cloud: Azure, CosmosDB, Azure Function
 
 <hr>
 
@@ -28,19 +29,13 @@
 - Creating Frontend Readme 
 <hr>
 
-## Diagram 
-![Project Diagram](images/sitemap.png)<hr>
-
 # Frontend Overview
 ## *Scope of Frontend*
 ### HTML document will be updated with personal information. After updates are made, a javascript file will be created and the visitor counter function will be written.  
 
 <hr>
 
-## Frontend
-### HTML
-
-modifications implemented were the inclusion of horizontal rules, adding validation links to certifications, and linking the design narrative to its corresponding Jira Page and GitHub Repo.
+## Cloud/Backend
 
 ### JavaScript
   **Purpose of the function**
@@ -58,7 +53,36 @@ modifications implemented were the inclusion of horizontal rules, adding validat
 - catch error, if present, and log the error message to the consle
 - return count
 
-<hr>
+### Azure
+- In order to create a Cosmos DB account, you must first navigate to your subscription
+- Enter "Cosmos DB" in the search bar and select the CosmosDB icon
+- Create a new resource group and provide it with a name
+- Provide a new account name
+- Select Core SQL
+- Select the region that works best for you | Note: ***You may run into issues with the Account creating, if so select an alternate region near your location*** |
+- Select the serverless option, due to it's affordable pricing
+
+### CosmosDB
+- Select "Data Explorer" in the overview navigation menu located to the left side of the screen
+- Select the dropdown menu labeled "Data", select you container, and create a new database
+- Use your existing database id and give the counter id the name "counter"
+- the partition key will not need to be edited for this project
+  - partition key: a field that you use to distinguish between 
+- Create container, expand the container, and select "Items"
+- Create a new item and replace the text with the number "1"
+- add counter as thus
+  ```js
+  "count":0, 
+  ```
+  - Save | Note: ***You will notice metadata being generated, this is standard and will not be used yet***
+  
+  ### Azure Function
+    **Purpose of Azure Function**
+
+    Azure Function is a serverless solution that allows us to create pieces of code that are event driven without the need to worry about the infrastructure behind the pieces of code. Azure Function also has a feature called "bindings" which allow us to connect other resources to our Function
+
+
+  <hr>
 
 ## Credits
 

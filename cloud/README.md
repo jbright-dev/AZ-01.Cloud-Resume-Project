@@ -1,19 +1,15 @@
-# Frontend readme
-## *Frontend Readme detailing styling changes and HTML modifications*<hr>
+# Cloud README <!-- omit in toc -->
+## *Cloud README detailing the steps taken in the Azure Portal to deploy an Azure Function*<hr> <!-- omit in toc -->
 
-## Table of Contents 
-- [Cloud-Resume-Project](#cloud-resume-project) 
-  - [Technologies Used:](#technologies-used)
-  - [Challenges](#challenges)
-  - [Diagram](#diagram)
+- [Cloud Overview](#cloud-overview)
+  - [*Scope of Cloud Services*](#scope-of-cloud-services)
+  - [Cloud/Backend](#cloudbackend)
+    - [JavaScript](#javascript)
+    - [Azure](#azure)
+    - [CosmosDB](#cosmosdb)
+    - [Azure Function](#azure-function)
   - [Credits](#credits)
     - [Project References](#project-references)
-    - [Frontend](#frontend)
-    - [Backend](#backend)
-    - [Cloud](#cloud)
-    - [Other](#other)
-  - [License](#license)
-
 <hr>
 
 ## Technologies Used:
@@ -29,9 +25,9 @@
 - Creating Frontend Readme 
 <hr>
 
-# Frontend Overview
-## *Scope of Frontend*
-### HTML document will be updated with personal information. After updates are made, a javascript file will be created and the visitor counter function will be written.  
+# Cloud Overview
+## *Scope of Cloud Services*
+### A Resource Group and CosmosDB Account will be created. Following creation a container will be generated and we will begin take the necessary steps to implement our backend Azure Function  <!-- omit in toc -->
 
 <hr>
 
@@ -89,8 +85,5 @@
 ### Project References
 
 - <a href="https://github.com/madebygps/cgc-azure-resume">Cloud Guru Azure Resume Challenge.</a>
-- <a href="https://www.youtube.com/watch?v=ieYrBWmkfno&t=281s">Cloud Guru Azure Resume Challenge Video</a>
-  
-### Frontend
-- <a href="https://www.geeksforgeeks.org/html-hr-tag/">GeeksforGeeks.org article on adding a horizontal rule</a> 
+- <a href="https://www.youtube.com/watch?v=ieYrBWmkfno&t=281s">Cloud Guru Azure Resume Challenge Video</a> 
 <hr>

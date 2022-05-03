@@ -1,4 +1,4 @@
-# Cloud-Resume-Project
+# Cloud-Resume-Project README
 ## *Azure-based full-stack serverless coding project using Blob Storage, Functions, CosmosDB, and GitHub Actions*<hr>
 
 ## Table of Contents 

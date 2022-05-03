@@ -1,4 +1,4 @@
-# Frontend readme
+# Frontend README
 ## *Frontend Readme detailing styling changes and HTML modifications*<hr>
 
 ## Table of Contents 

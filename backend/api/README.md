@@ -18,6 +18,7 @@
 
 ## Technologies Used:
 - Languages: C#
+- Framework: .NET Core 3, HTTPTrigger
 
 <hr>
 
@@ -26,9 +27,6 @@
 - Running Azure Function
 - Trouble Shooting Function Errors 
 <hr>
-
-## Diagram 
-![Project Diagram](images/sitemap.png)<hr>
 
 # API Overview
 ## *Scope of API*
@@ -41,49 +39,127 @@
 
 modifications implemented were the inclusion of horizontal rules, adding validation links to certifications, and linking the design narrative to its corresponding Jira Page and GitHub Repo.
 
+
 ### Azure Function Extension
   **Note**
 
-  *Be sure to check the resources link found * 
+  *Be sure to download all of the resources found on the ACG Tutorial YouTube* 
 
-- create file in frontend folder named 'main.js'.
-- To call the function add an event listener named 'DOMContentLoaded' and get visit count
-  ```js
-  Window.addEventListener('DOMContentLoaded', (event) =>{
-    getVisitCount();
+- Create a new project and select browse
+  - in the backend folder, select api
+- Select C# as your language, .NET Core 3 as the framework, and HttpTrigger as the template
+- Name the template "GetResumeCounter"
+- Set access rights to "Function"
+  - If you receive a message stating there are unresolved dependices, select restore
+
+
+ ### GetResumeCounter.cs
+ - Open the GetResumeCounter.cs file
+ - Open the terminal and run "func host start"
+   - Remember you do need to run this function where your API lives so make sure you're in the function folder
+   - If running a function throws an error, make sure you have installed all of the necessary resources and Node.js npm
+ - Once the function runs you will get a URL you can click on and go to and you will see this screen:
+  
+ ![Successful Function Execution](images/../SuccessfulFunction.png)
+
+ - You can personalize this message by adding a query to the end of the url
   ```
--  Declare a constant named 'functionApi;. The function will require a URL to place in the single quotes, but we will this leave blank until later.
-  ```js
-  const functionApi ='';
+?name="insert your name"
   ```
-- create constant and name it "getVisitCount
-- declare variable, we used the number thirty
-  ```js
-  const getVisitCount = () => {
-    let count = 30;
-  ```
-- write fetch function that fetch's the API and grabs the response and returns it to JSON
-- Then grab the response and log a message to the console for debugging purposes
-  ```js
-  fetch(functionApi).then(response => {
-        return response.json()
-    }).then(response =>{
-        console.log("Website called function API.");
-  ```
-- Now set variable to the created variable to the actualy data that's in the JSON response
-- grab HTML document and get the element by the counter Id and then the inner text will be set to count data
-  ```js
-  count = response.count;
-        document.getElementById("counter").innerText = count;
-    }).catch(function(error){
-  ```
-- catch error, if present, and log the error message to the console
-- return count
-  ```js
-  count = response.count;
-        document.getElementById("counter").innerText = count;
-    }).catch(function(error){
-  ```
+
+### CosmosDB
+[Link to download other versions of the Nuget Package]((https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.CosmosDB/3.0.10))
+
+- Copy and the following .NET CLI and paste it in the terminal while you are located in the api folder
+```
+dotnet add package Microsoft.Azure.WebJobs.Extensions.CosmosDB --version 3.0.10
+```
+- Run the command, the package you will need to work with CosmosDB
+- Navigate to the local.settings.json file
+
+
+### Local.settings.json
+- This is where we can save secrets and keys that we need to work
+- This file remains local, so whenever we push our changes to GitHub the .gitignore file will make sure to ignore this file
+- Add a the following key value pair
+
+
+```
+"(NAME OF YOUR DB)ConnectionString: " "
+```
+
+
+- Navigate to CosmosDB in your browser, go to settings in the side bar, and select "Keys"
+- Copy the Primary Key string and paste it into your key pair
+
+
+```
+(NAME OF YOUR DB)ConnectionString: "Copied Primary Key "
+```
+
+
+- Save you changes
+
+### Counter.cs
+**Purpose of Counter.cs** 
+
+*The purpose of the C# Class is to describe the counter object*
+
+- Navigate to the backend folder and create new file called "Counter.cs"
+- write the following code
+
+
+```cs
+using Newtonsoft.Json;
+
+namespace Company.Function
+{
+    public class Counter
+    {
+        [JsonProperty(PropertyName ="id")]
+```
+
+
+- We will then set our "Id" string getters and setters as well as the json properties as such
+  
+```cs
+using Newtonsoft.Json;
+
+namespace Company.Function
+{
+    public class Counter
+    {
+        [JsonProperty(PropertyName ="id")]
+        public string Id {get; set;}
+```
+*The purpose of getters and setters are to declare or obtain the values of varaible, usually private ones,
+they are important because it allows for a central location taht is able to handle data prior to declaring it
+or returnign it to the developer*
+
+*A JSON object contains zero, one, or more key-value pairs, also called properties. JSON properties contain objects or values - no attributes*
+
+
+- We will then set our "Count" interger getters and setters as well as the json properties
+
+```cs
+using Newtonsoft.Json;
+
+namespace Company.Function
+{
+    public class Counter
+    {
+        [JsonProperty(PropertyName ="id")]
+        public string Id {get; set;}
+
+        [JsonProperty(PropertyName ="count")]
+        public int Count {get;set;}
+    }
+}
+```
+
+- Note: If we navigate back to our CosmosDB Data Explorer we will see that the Item id and count matches our json properties
+
+![CosmosDB](images/../MatchingProperties.png)
 
 <hr>
 
@@ -94,7 +170,6 @@ modifications implemented were the inclusion of horizontal rules, adding validat
 - <a href="https://github.com/madebygps/cgc-azure-resume">Cloud Guru Azure Resume Challenge.</a>
 - <a href="https://www.youtube.com/watch?v=ieYrBWmkfno&t=281s">Cloud Guru Azure Resume Challenge Video</a>
   
-## Resources Frontend
-- <a href="https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.CosmosDB/3.0.10/">.Net CLI version used in video and in this project</a> 
+## Resources API
+- <a href="https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.CosmosDB/3.0.10/">.NET CLI version used in video and in this project</a> 
 <hr>
-# Your API lives here

@@ -220,7 +220,14 @@ return new HttpResponseMessage(System.Net.HttpStatusCode.OK)
 func host start
 ```
 
-- This will run our function and provide a URL; copy the URL and open it into the browser
+- This will run our function and provide a URL; copy GetResumeCounter: "Generated URL" and open it into the browser
+- If the function is successful you will see id and count on the screen, and whenever the page is refreshed the count will increase by one
+
+![Funciton Test](images/../FunctionTest.png))
+
+- To reset the the counter back to zero navigate to your container in the azure portal and change the count back to zero
+
+![Reset Counter](images/../ResetCounter.png))
 <hr>
 
 ## Credits

@@ -52,7 +52,6 @@ modifications implemented were the inclusion of horizontal rules, adding validat
 - Set access rights to "Function"
   - If you receive a message stating there are unresolved dependices, select restore
 
-
  ### GetResumeCounter.cs
  - Open the GetResumeCounter.cs file
  - Open the terminal and run "func host start"
@@ -161,6 +160,67 @@ namespace Company.Function
 
 ![CosmosDB](images/../MatchingProperties.png)
 
+
+### CosmosDB Bindings
+- Add our binding as follows:
+  
+```cs
+public static HttpResponseMessage Run(
+            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
+            [CosmosDB(databaseName:"NameofYourDatabase", collectionName: "Counter", ConnectionStringSetting = "NameofYourDatabaseConnectionString", Id = "1", PartitionKey = "1")] Counter counter,
+            [CosmosDB(databaseName:"NameofYourDatabase", collectionName: "Counter", ConnectionStringSetting = "NameofYourDatabaseConnectionString", Id = "1", PartitionKey = "1")] out Counter updatedCounter,
+
+            ILogger log)
+        {
+```
+
+*The first binding allows us to retreive an item and allows us to retrieve an item that has the Id "1" by connecting to the database using the azure resume connection string; it does this by looking for the item named counter inside of the collection (or container) named "Nameofyourdatabase". The second binding is our output binding and provides the updated counter number* 
+
+- add the following log:
+
+```cs
+            log.LogInformation("C# HTTP trigger function processed a request.");
+```
+
+- Add the following settings to the C# the top of your page to clear any code errors you may receive
+
+```cs
+using System.Net.Http;
+using System.Text;
+```
+
+- Set the updated coutner object to be the same as the incoming counter object by entering the following:
+```cs
+updatedCounter = counter;
+updatedCounter.Count += 1;
+```
+
+*This tells our input binding to grab and populate the "counter object" when the function is executed, and since the updated counter is what we're going to be returning to the databse to update the account information, the count is going to be increased by one.*
+
+- Now structure the JSON that we want to return by entering:
+
+```cs
+var jsonToReturn = JsonConvert.SerializeObject(counter);
+```
+*This is what we're going to be seeing in the browser and what's going to be available via the API, JSON convert. It is serializing the object counter*
+
+- Write the following return and return message:
+
+```cs
+return new HttpResponseMessage(System.Net.HttpStatusCode.OK)
+  {
+    Content = new StringContent(jsonToReturn, Encoding.UTF8, "application/json")
+  };
+```
+### Testing the Function Locally
+
+- Open your terminal and run the function while in the api folder:
+
+```
+func host start
+```
+
+- This will run our function and provide a URL; copy the URL and open it into the browser
 <hr>
 
 ## Credits

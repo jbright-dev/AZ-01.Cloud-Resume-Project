@@ -228,6 +228,22 @@ func host start
 - To reset the the counter back to zero navigate to your container in the azure portal and change the count back to zero
 
 ![Reset Counter](images/../ResetCounter.png))
+
+
+### Enable CORS
+*CORS, or Cross-Origin Resource Sharing is an HTTP-header based mechanism that allows a server to indicate any origins other than its own, such as CosmosDB, from which a browser should permit loading resources*
+
+- Navigate to the local.settings.json file and enter the following:
+
+```json
+,
+  "Host":
+  {
+    "CORS": "*"
+  }
+}
+```
+- Now that the function is running locally and the counter data can be viewed in the browser we can now connect the backend to the frontend
 <hr>
 
 ## Credits

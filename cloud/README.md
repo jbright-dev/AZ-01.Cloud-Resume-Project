@@ -77,7 +77,7 @@
 
     Azure Function is a serverless solution that allows us to create pieces of code that are event driven without the need to worry about the infrastructure behind the pieces of code. Azure Function also has a feature called "bindings" which allow us to connect other resources to our Function
 
-
+- Update link to next readme [Backend](C:\Users\jason\desktop\projects\cloud-resume-project\backend\README.md)
   <hr>
 
 ## Credits

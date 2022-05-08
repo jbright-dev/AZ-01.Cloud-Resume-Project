@@ -85,7 +85,7 @@ modifications implemented were the inclusion of horizontal rules, adding validat
         document.getElementById("counter").innerText = count;
     }).catch(function(error){
   ```
-
+Update link to to nex readme [Backend](C:\Users\jason\desktop\projects\cloud-resume-project\backend\README.md)
 <hr>
 
 ## Credits
@@ -97,4 +97,6 @@ modifications implemented were the inclusion of horizontal rules, adding validat
   
 ## Resources Frontend
 - <a href="https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.CosmosDB/3.0.10/">.Net CLI version used in video and in this project</a> 
+  
+  
 <hr>

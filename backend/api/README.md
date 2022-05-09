@@ -243,6 +243,17 @@ func host start
   }
 }
 ```
+
+- run the function with the command:
+```powershell
+func host start
+```
+
+- copy the URL Provided and place it in this location within the main.js file
+```js
+const functionApi = '<Insert URL Here'
+```
+
 - Now that the function is running locally and the counter data can be viewed in the browser we can now connect the backend to the frontend
 <hr>
 

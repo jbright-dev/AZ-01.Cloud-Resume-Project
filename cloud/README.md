@@ -8,6 +8,11 @@
     - [Azure](#azure)
     - [CosmosDB](#cosmosdb)
     - [Azure Function](#azure-function)
+  - [Deploying to Azure](#deploying-to-azure)
+    - [*Scope of Azure Deployment*](#scope-of-azure-deployment)
+    - [Deploy the Azure Function](#deploy-the-azure-function)
+    - [Function App](#function-app)
+    - [Main.js](#mainjs)
   - [Credits](#credits)
     - [Project References](#project-references)
 <hr>
@@ -77,8 +82,62 @@
 
     Azure Function is a serverless solution that allows us to create pieces of code that are event driven without the need to worry about the infrastructure behind the pieces of code. Azure Function also has a feature called "bindings" which allow us to connect other resources to our Function
 
-- Update link to next readme [Backend](C:\Users\jason\desktop\projects\cloud-resume-project\backend\README.md)
-  <hr>
+- Update link to next readme [Backend]
+  
+## Deploying to Azure
+### *Scope of Azure Deployment*
+*During this phase of development we will depoloy the azure function to Azure, update the JavaScript function with the necessary URL, deploy the static site to our blob container, and set up Azure CDN for HTTPS and custom domain support.*
+
+
+### Deploy the Azure Function
+- navigate to the top of the repo and make sure your changes have been made adn pushed to GitHub
+- go to the Azure Functions Extension and deploy the Function App by selection the option shown below:
+
+  ![Deploy Function](images/DeployFunctionApp.png)
+
+- Select your subscription (being sure to use the advanced option)
+- name your Function App
+- select your runtime (in this instance we'll be using .NET Core 3.1)
+- select Linux as the OS and select the consumption plan
+- select the resource group you chose when you created your cosmos
+- create and name a new storage account, (optional: create an application insight)
+- Deploy the function
+- Navigate to the local.settings.json file within the api folder and copy the AzureResumeConnectionString value (do not copy the quotations)
+
+### Function App
+- Navigate to the Azure portal, and open the Function App
+- select the configuration option under settings and name your application "AzureResumeConnectionString"
+- paste the copied value into the "Value" field
+- select ok, save your changes, and select continue
+- Navigate to Functions and select the funciton you created
+- select the "Get Function URL" shown below:
+  
+  ![Get Function Url](images/GetFunction.png)
+
+
+
+### Main.js
+- Once inside the main.js file write the following:
+- 
+```js
+const functionApiUrl = ''
+```
+
+- insert your Url between the single quotations 
+- rename the other constant the following:
+
+```js
+const localFunctionApi =
+```
+
+- update the fetch command to the following:
+  
+```js
+fetch(functionApiUrl)
+```
+
+- Navigate back to the portal and Enable CORS (...to be continued)
+ <hr>
 
 ## Credits
 

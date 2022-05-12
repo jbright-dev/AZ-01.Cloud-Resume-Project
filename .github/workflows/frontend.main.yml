@@ -1,6 +1,7 @@
 name: deploy_frontend
 # Deploys when push is made from frontend folder
 
+
 on:
     push:
         branches: [ main ]
@@ -19,11 +20,13 @@ jobs:
     - name: Upload to blob storage
       uses: azure/CLI@v1
       with:
+      azcliversion: 2.35.0
         inlineScript: |
             az storage blob upload-batch --account-name cloudresumeproject --auth-mode key -d '$web' -s .
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:
+        azcliversion: 2.35.0
         inlineScript: |
            az cdn endpoint purge --content-paths  "/*" --profile-name "cloudresumeproject" --name "cloudresumeproject" --resource-group "cloudresume-rg"
 

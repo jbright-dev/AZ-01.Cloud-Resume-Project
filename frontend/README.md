@@ -29,7 +29,7 @@
 <hr>
 
 ## Diagram 
-![Project Diagram](images/sitemap.png)<hr>
+![Project Diagram](/frontend/images/CRPDiagram.png)<hr>
 
 # Frontend Overview
 ## *Scope of Frontend*

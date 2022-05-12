@@ -29,15 +29,15 @@
 <hr>
 
 ## Diagram 
-![Project Diagram](images/sitemap.png)<hr>
+![Project Diagram](backend/images/../../../frontend/images/Sitemap.png)<hr>
 
-# Frontend Overview
+# backend Overview
 ## *Scope of Frontend*
 ### HTML document will be updated with personal information. After updates are made, a javascript file will be created and the visitor counter function will be written.  
 
 <hr>
 
-## Frontend
+## Backend
 ### HTML
 
 modifications implemented were the inclusion of horizontal rules, adding validation links to certifications, and linking the design narrative to its corresponding Jira Page and GitHub Repo.
@@ -85,7 +85,7 @@ modifications implemented were the inclusion of horizontal rules, adding validat
         document.getElementById("counter").innerText = count;
     }).catch(function(error){
   ```
-Update link to to nex readme [Backend](C:\Users\jason\desktop\projects\cloud-resume-project\backend\README.md)
+Update link to to next readme [Backend](C:\Users\jason\desktop\projects\cloud-resume-project\backend\README.md)
 <hr>
 
 ## Credits

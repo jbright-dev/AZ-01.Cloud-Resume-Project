@@ -32,7 +32,7 @@
 <hr>
 
 ## Diagram 
-![Project Diagram](diagrams/CRPDiagram.png)<hr>
+![Project Diagram](diagram/../frontend/images/CRPDiagram.png)<hr>
 
 # Project Overview
 ## *Scope of Project*
